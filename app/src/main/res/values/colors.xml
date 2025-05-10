@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#F9A825</color> <!-- Amarillo construcción -->
+    <color name="secondaryColor">#3E2723</color> <!-- Marrón tierra -->
+    <color name="accentColor">#C62828</color> <!-- Rojo alerta -->
+    <color name="backgroundColor">#FFFDE7</color> <!-- Claro para fondo -->
+
+</resources>

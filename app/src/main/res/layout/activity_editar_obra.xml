@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDE7"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del Proyecto"
+            android:textStyle="bold"
+            android:textColor="#3E2723"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/et_edit_nombre_proyecto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del Proyecto"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cliente"
+            android:textStyle="bold"
+            android:textColor="#3E2723"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/et_edit_cliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cliente"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubicación"
+            android:textStyle="bold"
+            android:textColor="#3E2723"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/et_edit_ubicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ubicación"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha de Inicio"
+            android:textStyle="bold"
+            android:textColor="#3E2723"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/et_edit_fecha_inicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fecha de Inicio"
+            android:focusable="false"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha de Fin"
+            android:textStyle="bold"
+            android:textColor="#3E2723"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/et_edit_fecha_fin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fecha de Fin"
+            android:focusable="false"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/btn_actualizar_obra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actualizar Obra"
+            android:backgroundTint="#388E3C"
+            android:textColor="#FFFFFF"
+            android:onClick="actualizarObra" />
+    </LinearLayout>
+</ScrollView>
