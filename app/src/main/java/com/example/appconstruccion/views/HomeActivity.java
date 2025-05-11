@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.appconstruccion.R;
+import com.example.appconstruccion.views.materialUsado.AgregarMaterialUsadoActivity;
+import com.example.appconstruccion.views.materialUsado.ListaMaterialUsadoActivity;
 import com.example.appconstruccion.views.obra.ListaObrasActivity;
 import com.example.appconstruccion.views.obra.RegistroObraActivity;
 
@@ -36,7 +38,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void irAMateriales(View view) {
-        Toast.makeText(this, "Abrir módulo Materiales Usados", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, AgregarMaterialUsadoActivity.class);
+        startActivity(intent);
     }
 
     public void irAPersonal(View view) {
@@ -49,6 +52,9 @@ public class HomeActivity extends AppCompatActivity {
 
     public void irAListaObras(View view) {
         startActivity(new Intent(this, ListaObrasActivity.class));
+    }
+    public void irAListaMaterialesUsados(View view) {
+        startActivity(new Intent(this, ListaMaterialUsadoActivity.class));
     }
 
     @Override

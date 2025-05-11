@@ -5,79 +5,63 @@
     android:background="#FFFDE7"
     android:padding="16dp">
 
-    <LinearLayout
+
+<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Nombre del Material -->
+        <Spinner
+            android:id="@+id/spinner_obra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
         <EditText
             android:id="@+id/et_nombre_material"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:hint="Nombre del Material"
-            android:minHeight="48dp" />
+            android:layout_marginBottom="10dp" />
 
-        <!-- Cantidad -->
         <EditText
             android:id="@+id/et_cantidad_material"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:hint="Cantidad"
             android:inputType="number"
-            android:minHeight="48dp" />
+            android:layout_marginBottom="10dp" />
 
-        <!-- Costo por Unidad -->
         <EditText
             android:id="@+id/et_costo_unidad_material"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:hint="Costo por Unidad"
             android:inputType="numberDecimal"
-            android:minHeight="48dp" />
+            android:layout_marginBottom="10dp" />
 
-        <!-- Fecha de Uso -->
         <EditText
             android:id="@+id/et_fecha_uso_material"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="Fecha de Uso"
+            android:hint="Fecha de Uso (dd/mm/aaaa)"
             android:focusable="false"
-            android:clickable="true"
-            android:minHeight="48dp" />
+            android:layout_marginBottom="10dp" />
 
-        <!-- Observaciones -->
         <EditText
             android:id="@+id/et_observaciones_material"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
             android:hint="Observaciones"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:layout_marginBottom="20dp" />
 
-        <!-- ID de la Obra -->
-        <EditText
-            android:id="@+id/et_id_obra_material"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:hint="ID de la Obra"
-            android:inputType="number"
-            android:minHeight="48dp" />
-
-        <!-- Botón Guardar -->
         <Button
-            android:id="@+id/btn_guardar_material"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Guardar Material"
-            android:backgroundTint="#F9A825"
-            android:textColor="#FFFFFF"
-            android:onClick="guardarMaterialUsado" />
-
+            android:onClick="guardarMaterialUsado"
+            android:backgroundTint="#388E3C"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 </ScrollView>

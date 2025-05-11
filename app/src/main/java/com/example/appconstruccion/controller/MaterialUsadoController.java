@@ -20,22 +20,25 @@ public class MaterialUsadoController {
     public boolean agregarMaterial(MaterialUsado material) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues valores = new ContentValues();
+        valores.put("idObra", material.getIdObra());
         valores.put("nombreMaterial", material.getNombreMaterial());
         valores.put("cantidad", material.getCantidad());
         valores.put("costoUnidad", material.getCostoUnidad());
         valores.put("fechaUso", material.getFechaUso());
         valores.put("observaciones", material.getObservaciones());
-        valores.put("idObra", material.getIdObra());
 
         long resultado = db.insert("MaterialUsado", null, valores);
+        db.close();
         return resultado != -1;
+
     }
 
     // READ (obtener todos)
-    public List<MaterialUsado> obtenerTodos() {
+    public List<MaterialUsado> obtenerTodos(int idObra) {
         List<MaterialUsado> lista = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM MaterialUsado", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM MaterialUsado WHERE id_obra = ?",
+                new String[]{String.valueOf(idObra)});
         if (cursor.moveToFirst()) {
             do {
                 MaterialUsado material = new MaterialUsado(
@@ -51,8 +54,35 @@ public class MaterialUsadoController {
             } while (cursor.moveToNext());
         }
         cursor.close();
+        db.close();
         return lista;
     }
+    // Método para obtener un material utilizado por su ID
+    public MaterialUsado obtenerMaterialPorId(int id) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.query("MaterialUsado", null, "id = ?", new String[]{String.valueOf(id)}, null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            MaterialUsado material = new MaterialUsado(
+                    cursor.getInt(0), // id
+                    cursor.getString(1), // nombreMaterial
+                    cursor.getInt(2), // cantidad
+                    cursor.getDouble(3), // costoUnidad
+                    cursor.getString(4), // fechaUso
+                    cursor.getString(5), // observaciones
+                    cursor.getInt(6) // idObra
+            );
+
+            cursor.close();
+            db.close();
+            return material;
+        }
+        cursor.close();
+        db.close();
+        return null; // Si no se encuentra el material
+    }
+
+
 
     // UPDATE
     public boolean actualizarMaterial(MaterialUsado material) {
@@ -66,13 +96,16 @@ public class MaterialUsadoController {
         valores.put("idObra", material.getIdObra());
 
         int filas = db.update("MaterialUsado", valores, "id=?", new String[]{String.valueOf(material.getId())});
+        db.close();
         return filas > 0;
     }
+
 
     // DELETE
     public boolean eliminarMaterial(int id) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         int filas = db.delete("MaterialUsado", "id=?", new String[]{String.valueOf(id)});
+        db.close();
         return filas > 0;
     }
 }
