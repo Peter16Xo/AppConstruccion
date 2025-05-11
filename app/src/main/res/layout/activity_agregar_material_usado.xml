@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDE7"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Nombre del Material -->
+        <EditText
+            android:id="@+id/et_nombre_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Nombre del Material"
+            android:minHeight="48dp" />
+
+        <!-- Cantidad -->
+        <EditText
+            android:id="@+id/et_cantidad_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Cantidad"
+            android:inputType="number"
+            android:minHeight="48dp" />
+
+        <!-- Costo por Unidad -->
+        <EditText
+            android:id="@+id/et_costo_unidad_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Costo por Unidad"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp" />
+
+        <!-- Fecha de Uso -->
+        <EditText
+            android:id="@+id/et_fecha_uso_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Fecha de Uso"
+            android:focusable="false"
+            android:clickable="true"
+            android:minHeight="48dp" />
+
+        <!-- Observaciones -->
+        <EditText
+            android:id="@+id/et_observaciones_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Observaciones"
+            android:minHeight="48dp" />
+
+        <!-- ID de la Obra -->
+        <EditText
+            android:id="@+id/et_id_obra_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:hint="ID de la Obra"
+            android:inputType="number"
+            android:minHeight="48dp" />
+
+        <!-- Botón Guardar -->
+        <Button
+            android:id="@+id/btn_guardar_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar Material"
+            android:backgroundTint="#F9A825"
+            android:textColor="#FFFFFF"
+            android:onClick="guardarMaterialUsado" />
+
+    </LinearLayout>
+</ScrollView>
