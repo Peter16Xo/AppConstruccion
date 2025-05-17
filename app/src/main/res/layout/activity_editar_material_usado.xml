@@ -10,48 +10,104 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Nombre del Material -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del Material"
+            android:textStyle="bold"
+            android:textColor="#3E2723"
+            android:layout_marginBottom="4dp" />
 
         <EditText
             android:id="@+id/et_edit_nombre_material"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre del material"
-            android:inputType="text" />
+            android:hint="Nombre del Material"
+            android:layout_marginBottom="10dp"
+            android:importantForAccessibility="yes" />
+
+        <!-- Cantidad -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad"
+            android:textStyle="bold"
+            android:textColor="#3E2723"
+            android:layout_marginBottom="4dp" />
 
         <EditText
             android:id="@+id/et_edit_cantidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Cantidad"
-            android:inputType="number" />
+            android:inputType="number"
+            android:layout_marginBottom="10dp"
+            android:importantForAccessibility="yes" />
+
+        <!-- Costo por Unidad -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Costo por Unidad"
+            android:textStyle="bold"
+            android:textColor="#3E2723"
+            android:layout_marginBottom="4dp" />
 
         <EditText
             android:id="@+id/et_edit_costo_unidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Costo por unidad"
-            android:inputType="numberDecimal" />
+            android:hint="Costo por Unidad"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="10dp"
+            android:importantForAccessibility="yes" />
+
+        <!-- Fecha de Uso -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha de Uso"
+            android:textStyle="bold"
+            android:textColor="#3E2723"
+            android:layout_marginBottom="4dp" />
 
         <EditText
             android:id="@+id/et_edit_fecha_uso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Fecha de uso"
+            android:hint="Fecha de Uso"
             android:focusable="false"
-            android:clickable="true" />
+            android:clickable="true"
+            android:layout_marginBottom="10dp"
+            android:importantForAccessibility="yes" />
+
+        <!-- Observaciones -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Observaciones"
+            android:textStyle="bold"
+            android:textColor="#3E2723"
+            android:layout_marginBottom="4dp" />
 
         <EditText
             android:id="@+id/et_edit_observaciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Observaciones"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="20dp"
+            android:importantForAccessibility="yes" />
 
         <Button
-            android:id="@+id/btn_guardar_edicion"
+            android:id="@+id/btn_actualizar_material"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guardar Edición"
-            android:onClick="guardarEdicion" />
+            android:text="Actualizar Material"
+            android:backgroundTint="#388E3C"
+            android:textColor="#FFFFFF"
+            android:onClick="Actualizar_Material"
+            android:importantForAccessibility="yes" />
     </LinearLayout>
 </ScrollView>

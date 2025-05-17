@@ -53,9 +53,8 @@ public class HomeActivity extends AppCompatActivity {
     public void irAListaObras(View view) {
         startActivity(new Intent(this, ListaObrasActivity.class));
     }
-    public void irAListaMaterialesUsados(View view) {
-        startActivity(new Intent(this, ListaMaterialUsadoActivity.class));
-    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

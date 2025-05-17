@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.widget.*;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.appconstruccion.R;
 import com.example.appconstruccion.controller.MaterialUsadoController;
 import com.example.appconstruccion.model.MaterialUsado;
+
 import java.util.*;
 
 public class ListaMaterialUsadoActivity extends AppCompatActivity {
@@ -28,12 +30,21 @@ public class ListaMaterialUsadoActivity extends AppCompatActivity {
     }
 
     private void cargarLista() {
-        int idObra = getIntent().getIntExtra("idObra", -1); // Asegúrate de pasar el idObra
+        int idObra = getIntent().getIntExtra("idObra", -1);
         if (idObra == -1) {
             Toast.makeText(this, "Error: ID de obra no recibido", Toast.LENGTH_SHORT).show();
+            finish(); // Cerramos la activity porque no hay ID válido
             return;
         }
+
         listaMateriales = controller.obtenerTodos(idObra);
+
+        if (listaMateriales == null || listaMateriales.isEmpty()) {
+            Toast.makeText(this, "No hay materiales usados para esta obra", Toast.LENGTH_SHORT).show();
+            // Limpiar listaView por si acaso
+            listaView.setAdapter(null);
+            return;
+        }
 
         List<String> datosFormateados = new ArrayList<>();
         int contador = 1;
@@ -57,6 +68,11 @@ public class ListaMaterialUsadoActivity extends AppCompatActivity {
     }
 
     private void mostrarOpciones(int pos) {
+        if (listaMateriales == null || pos < 0 || pos >= listaMateriales.size()) {
+            Toast.makeText(this, "Material no válido", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         MaterialUsado materialSeleccionado = listaMateriales.get(pos);
 
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
@@ -65,13 +81,14 @@ public class ListaMaterialUsadoActivity extends AppCompatActivity {
                 .setPositiveButton("Editar", (dialog, which) -> {
                     Intent intent = new Intent(this, EditarMaterialUsadoActivity.class);
                     intent.putExtra("idMaterial", materialSeleccionado.getId());
+                    intent.putExtra("idObra", materialSeleccionado.getIdObra());
                     startActivity(intent);
                 })
                 .setNegativeButton("Eliminar", (dialog, which) -> {
-                    boolean eliminado = controller.eliminarMaterial((int) materialSeleccionado.getId());
+                    boolean eliminado = controller.eliminarMaterial(materialSeleccionado.getId());
                     if (eliminado) {
                         Toast.makeText(this, "Material eliminado", Toast.LENGTH_SHORT).show();
-                        cargarLista(); // Recargar lista después de eliminar
+                        cargarLista();
                     } else {
                         Toast.makeText(this, "Error al eliminar", Toast.LENGTH_SHORT).show();
                     }
@@ -83,7 +100,7 @@ public class ListaMaterialUsadoActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        cargarLista(); // Recargar al volver de editar
+        cargarLista();
     }
 }
 

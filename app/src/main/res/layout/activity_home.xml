@@ -32,7 +32,7 @@
             <include layout="@layout/card_personal_asignado" />
             <include layout="@layout/card_costos_totales" />
             <include layout="@layout/card_lista_obras" />
-            <include layout="@layout/card_lista_materiales_usados" />
+
 
         </LinearLayout>
     </ScrollView>

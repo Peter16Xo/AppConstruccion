@@ -11,6 +11,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccione la obra:" />
         <Spinner
             android:id="@+id/spinner_obra"
             android:layout_width="match_parent"
@@ -61,7 +65,8 @@
             android:layout_height="wrap_content"
             android:text="Guardar Material"
             android:onClick="guardarMaterialUsado"
-            android:backgroundTint="#388E3C"
+            android:backgroundTint="#F9A825"
             android:textColor="#FFFFFF" />
+
     </LinearLayout>
 </ScrollView>
