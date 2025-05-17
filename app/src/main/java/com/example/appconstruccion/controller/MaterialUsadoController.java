@@ -39,7 +39,6 @@ public class MaterialUsadoController {
         List<MaterialUsado> lista = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        // ✅ CORREGIDO: idObra, no id_obra
         Cursor cursor = db.rawQuery("SELECT * FROM MaterialUsado WHERE idObra = ?",
                 new String[]{String.valueOf(idObra)});
 

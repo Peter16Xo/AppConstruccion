@@ -33,7 +33,7 @@ public class ListaMaterialUsadoActivity extends AppCompatActivity {
         int idObra = getIntent().getIntExtra("idObra", -1);
         if (idObra == -1) {
             Toast.makeText(this, "Error: ID de obra no recibido", Toast.LENGTH_SHORT).show();
-            finish(); // Cerramos la activity porque no hay ID válido
+            finish();
             return;
         }
 
@@ -41,7 +41,7 @@ public class ListaMaterialUsadoActivity extends AppCompatActivity {
 
         if (listaMateriales == null || listaMateriales.isEmpty()) {
             Toast.makeText(this, "No hay materiales usados para esta obra", Toast.LENGTH_SHORT).show();
-            // Limpiar listaView por si acaso
+
             listaView.setAdapter(null);
             return;
         }

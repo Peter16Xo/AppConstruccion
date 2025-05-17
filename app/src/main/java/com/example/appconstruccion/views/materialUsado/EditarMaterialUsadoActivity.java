@@ -38,7 +38,7 @@ public class EditarMaterialUsadoActivity extends AppCompatActivity {
             return;
         }
 
-        // Asignar el idObra al objeto, por seguridad
+        // Asignar el idObra al objeto
         material.setIdObra(idObra);
 
         etNombre = findViewById(R.id.et_edit_nombre_material);
@@ -86,7 +86,7 @@ public class EditarMaterialUsadoActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(this, ListaMaterialUsadoActivity.class);
                 intent.putExtra("idObra", idObra);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); // ✅ Evita pila duplicada
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //
                 startActivity(intent);
                 finish();
             } else {
