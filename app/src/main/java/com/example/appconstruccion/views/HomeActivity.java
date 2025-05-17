@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.appconstruccion.R;
+import com.example.appconstruccion.controller.CostosTotalesActivity;
 import com.example.appconstruccion.views.obra.ListaObrasActivity;
 import com.example.appconstruccion.views.obra.RegistroObraActivity;
 
@@ -45,6 +46,8 @@ public class HomeActivity extends AppCompatActivity {
 
     public void irACostos(View view) {
         Toast.makeText(this, "Abrir módulo Costos Totales", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, CostosTotalesActivity.class);
+        startActivity(intent);
     }
 
     public void irAListaObras(View view) {

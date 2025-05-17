@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Costos Totales"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Presupuesto Total"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/etPresupuestoTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese presupuesto total"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gastos Materiales"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etGastosMateriales"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gastos Mano de Obra"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etManoDeObra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gastos Herramientas"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etHerramientas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnRegistrarGasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrar Gasto"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/tvRestante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restante: $0"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_red_dark" />
+</LinearLayout>
+
+
+

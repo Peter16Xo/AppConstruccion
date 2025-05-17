@@ -8,12 +8,13 @@
     android:onClick="irACostos"
     android:clickable="true">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="💰 Costos Totales"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:padding="20dp"
-        android:textColor="#000000" />
-</androidx.cardview.widget.CardView>
+<TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="💰 Costos Totales"
+android:textSize="18sp"
+android:textStyle="bold"
+android:padding="20dp"
+android:textColor="#000000" />
+    </androidx.cardview.widget.CardView>
+
