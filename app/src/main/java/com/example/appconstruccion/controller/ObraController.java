@@ -74,4 +74,9 @@ public class ObraController {
         int filas = db.delete("obra", "id=?", new String[]{String.valueOf(id)});
         return filas > 0;
     }
+
+    // OBTENER NOMBRES DE OBRAS PARA PERSONAL
+    public List<String> getListaObras() {
+        return dbHelper.obtenerNombresObras();
+    }
 }

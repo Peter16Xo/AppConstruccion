@@ -54,10 +54,10 @@
             android:id="@+id/btn_guardar_obra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guardar Obra"
             android:backgroundTint="#F9A825"
-            android:textColor="#FFFFFF"
-            android:onClick="guardarObra" />
+            android:onClick="guardarObra"
+            android:text="Guardar Obra"
+            android:textColor="#FFFFFF" />
 
 
     </LinearLayout>

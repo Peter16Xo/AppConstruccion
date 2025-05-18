@@ -13,6 +13,12 @@
         android:theme="@style/Theme.AppConstruccion"
         tools:targetApi="31">
         <activity
+            android:name=".views.Personal.consultar_personal"
+            android:exported="false" />
+        <activity
+            android:name=".views.Personal.RegistroPersonalActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.obra.EditarObraActivity"
             android:exported="false" />
         <activity

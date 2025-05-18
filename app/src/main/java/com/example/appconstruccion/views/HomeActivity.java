@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.appconstruccion.R;
+import com.example.appconstruccion.views.Personal.RegistroPersonalActivity;
 import com.example.appconstruccion.views.obra.ListaObrasActivity;
 import com.example.appconstruccion.views.obra.RegistroObraActivity;
 
@@ -40,6 +41,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void irAPersonal(View view) {
+        Intent ventanaPersonal = new Intent(this, RegistroPersonalActivity.class);
+        startActivity(ventanaPersonal);
         Toast.makeText(this, "Abrir módulo Personal Asignado", Toast.LENGTH_SHORT).show();
     }
 
