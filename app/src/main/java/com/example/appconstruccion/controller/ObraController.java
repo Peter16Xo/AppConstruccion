@@ -74,4 +74,20 @@ public class ObraController {
         int filas = db.delete("obra", "id=?", new String[]{String.valueOf(id)});
         return filas > 0;
     }
+
+    // NUEVO MÉTODO: Obtener el último ID de obra
+    public int obtenerUltimoIdObra() {
+        int idObra = -1;
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT id FROM obra ORDER BY id DESC LIMIT 1", null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            idObra = cursor.getInt(0);
+            cursor.close();
+        }
+
+        db.close();
+        return idObra;
+    }
 }
+

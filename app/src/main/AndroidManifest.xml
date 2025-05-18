@@ -28,11 +28,21 @@
             android:name=".views.usuarios.RegistroUsuarioActivity"
             android:exported="false" />
         <activity
+            android:name=".views.materialUsado.AgregarMaterialUsadoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.materialUsado.EditarMaterialUsadoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.materialUsado.ListaMaterialUsadoActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".views.LoginActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

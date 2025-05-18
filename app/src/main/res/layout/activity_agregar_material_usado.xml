@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDE7"
+    android:padding="16dp">
+
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seleccione la obra:" />
+        <Spinner
+            android:id="@+id/spinner_obra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/et_nombre_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del Material"
+            android:layout_marginBottom="10dp" />
+
+        <EditText
+            android:id="@+id/et_cantidad_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cantidad"
+            android:inputType="number"
+            android:layout_marginBottom="10dp" />
+
+        <EditText
+            android:id="@+id/et_costo_unidad_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Costo por Unidad"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="10dp" />
+
+        <EditText
+            android:id="@+id/et_fecha_uso_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fecha de Uso (dd/mm/aaaa)"
+            android:focusable="false"
+            android:layout_marginBottom="10dp" />
+
+        <EditText
+            android:id="@+id/et_observaciones_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Observaciones"
+            android:minHeight="48dp"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar Material"
+            android:onClick="guardarMaterialUsado"
+            android:backgroundTint="#F9A825"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</ScrollView>

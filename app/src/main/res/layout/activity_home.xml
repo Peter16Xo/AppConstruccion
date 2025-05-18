@@ -33,6 +33,7 @@
             <include layout="@layout/card_costos_totales" />
             <include layout="@layout/card_lista_obras" />
 
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
