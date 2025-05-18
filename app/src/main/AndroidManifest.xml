@@ -37,6 +37,12 @@
             android:name=".views.materialUsado.ListaMaterialUsadoActivity"
             android:exported="false" />
         <activity
+            android:name=".views.costosTotales.FormularioCostoTotalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.costosTotales.ListaCostosTotalesActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.HomeActivity"
             android:exported="false" />
         <activity
