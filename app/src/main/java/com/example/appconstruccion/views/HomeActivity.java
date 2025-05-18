@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.appconstruccion.R;
+import com.example.appconstruccion.views.avanceObra.AvanceObraActivity;
 import com.example.appconstruccion.views.materialUsado.AgregarMaterialUsadoActivity;
 import com.example.appconstruccion.views.materialUsado.ListaMaterialUsadoActivity;
 import com.example.appconstruccion.views.obra.ListaObrasActivity;
@@ -37,7 +38,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void irAAvanceObra(View view) {
-        Toast.makeText(this, "Abrir módulo Avance de Obra", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent( this, AvanceObraActivity.class);
+        startActivity(intent);
     }
 
     public void irAMateriales(View view) {

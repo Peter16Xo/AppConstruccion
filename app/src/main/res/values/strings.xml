@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AppConstruccion</string>
+        <string name="aprobada">Aprobada</string>
+        <string name="no_aprobada">No aprobada</string>
+
 </resources>
+

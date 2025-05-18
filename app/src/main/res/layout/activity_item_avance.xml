@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewFechaAvance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha: 01/01/2024"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewPorcentajeAvance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Avance: 50%"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewDescripcionAvance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descripción: Tarea completada"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonEditarAvance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar"
+        android:layout_marginStart="8dp"/>
+
+    <Button
+        android:id="@+id/buttonEliminarAvance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar"
+        android:layout_marginStart="8dp"/>
+
+</LinearLayout>
