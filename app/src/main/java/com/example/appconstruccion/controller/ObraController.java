@@ -75,6 +75,11 @@ public class ObraController {
         return filas > 0;
     }
 
+    // OBTENER NOMBRES DE OBRAS PARA PERSONAL
+    public List<String> getListaObras() {
+        return dbHelper.obtenerNombresObras();
+    }
+
     // NUEVO MÉTODO: Obtener el último ID de obra
     public int obtenerUltimoIdObra() {
         int idObra = -1;

@@ -37,12 +37,27 @@
             android:name=".views.materialUsado.ListaMaterialUsadoActivity"
             android:exported="false" />
         <activity
+            android:name=".views.Personal.consultar_personal"
+            android:exported="false" />
+        <activity
+            android:name=".views.Personal.RegistroPersonalActivity"
+            android:exported="false" />
+
+        <activity android:name=".views.avanceObra.AvanceObraActivity"
+            android:exported="false" />
+
+        <activity android:name=".views.avanceObra.ListaAvancesActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".views.avanceObra.EditarAvanceActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".views.LoginActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -54,11 +54,12 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Actualizar"
-            android:onClick="actualizarUsuario"
+            android:layout_marginBottom="10dp"
             android:backgroundTint="#388E3C"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="10dp" />
+            android:onClick="actualizarUsuario"
+            android:text="Actualizar"
+            android:textColor="#FFFFFF" />
+
 
         <Button
             android:layout_width="match_parent"
