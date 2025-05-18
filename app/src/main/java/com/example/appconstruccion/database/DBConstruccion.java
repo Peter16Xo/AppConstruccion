@@ -3,13 +3,20 @@ package com.example.appconstruccion.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.Cursor;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 
 public class DBConstruccion extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "Construccion.db";
-    public static final int DB_VERSION = 5;
+    public static final int DB_VERSION = 7;
 
     public DBConstruccion(Context context) {
+
         super(context, DB_NAME, null, DB_VERSION);
     }
 
@@ -44,6 +51,18 @@ public class DBConstruccion extends SQLiteOpenHelper {
 
         db.execSQL(queryMaterialUsado);
 
+        String queryPersonal = "CREATE TABLE personal (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "nombreobra TEXT," +
+                "cedula TEXT," +
+                "nombres TEXT," +
+                "apellidos TEXT," +
+                "cargo TEXT," +
+                "telefono TEXT," +
+                "tarea TEXT," +
+                "asistencia INTEGER)";
+        db.execSQL(queryPersonal);
+
     }
 
 
@@ -52,10 +71,26 @@ public class DBConstruccion extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS usuario");
         db.execSQL("DROP TABLE IF EXISTS obra");
         db.execSQL("DROP TABLE IF EXISTS materialUsado");
+        db.execSQL("DROP TABLE IF EXISTS personal");
 
         onCreate(db);
     }
+    public List<String> obtenerNombresObras() {
+        List<String> listaObras = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT nombreProyecto FROM obra", null);
 
+        if (cursor.moveToFirst()) {
+            do {
+                String nombre = cursor.getString(0);
+                listaObras.add(nombre);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return listaObras;
+    }
 
 
 }

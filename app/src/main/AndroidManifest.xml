@@ -37,6 +37,12 @@
             android:name=".views.materialUsado.ListaMaterialUsadoActivity"
             android:exported="false" />
         <activity
+            android:name=".views.Personal.consultar_personal"
+            android:exported="false" />
+        <activity
+            android:name=".views.Personal.RegistroPersonalActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.HomeActivity"
             android:exported="false" />
         <activity

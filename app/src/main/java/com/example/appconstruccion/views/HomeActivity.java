@@ -15,6 +15,9 @@ import com.example.appconstruccion.views.materialUsado.AgregarMaterialUsadoActiv
 import com.example.appconstruccion.views.materialUsado.ListaMaterialUsadoActivity;
 import com.example.appconstruccion.views.obra.ListaObrasActivity;
 import com.example.appconstruccion.views.obra.RegistroObraActivity;
+import com.example.appconstruccion.views.Personal.RegistroPersonalActivity;
+
+
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -43,6 +46,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void irAPersonal(View view) {
+        Intent ventanaPersonal = new Intent(this, RegistroPersonalActivity.class);
+        startActivity(ventanaPersonal);
         Toast.makeText(this, "Abrir módulo Personal Asignado", Toast.LENGTH_SHORT).show();
     }
 
