@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBConstruccion extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "Construccion.db";
-    public static final int DB_VERSION = 2;
+    public static final int DB_VERSION = 4;
 
     public DBConstruccion(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -32,6 +32,17 @@ public class DBConstruccion extends SQLiteOpenHelper {
                 "fechaFin TEXT)";
         db.execSQL(queryObra);
 
+        String queryMaterialUsado = "CREATE TABLE MaterialUsado (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "nombreMaterial TEXT," +
+                "cantidad INTEGER," +
+                "costoUnidad REAL," +
+                "fechaUso TEXT," +
+                "observaciones TEXT," +
+                "idObra INTEGER," +
+                "FOREIGN KEY(idObra) REFERENCES obra(id))";
+
+        db.execSQL(queryMaterialUsado);
 
     }
 
@@ -40,6 +51,7 @@ public class DBConstruccion extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS usuario");
         db.execSQL("DROP TABLE IF EXISTS obra");
+        db.execSQL("DROP TABLE IF EXISTS materialUsado");
 
         onCreate(db);
     }

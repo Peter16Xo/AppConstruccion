@@ -59,34 +59,44 @@ public class ListaObrasActivity extends AppCompatActivity {
         listaView.setOnItemClickListener((parent, view, position, id) -> mostrarOpciones(position));
     }
 
-
     private void mostrarOpciones(int pos) {
         Obra obraSeleccionada = listaObras.get(pos);
 
+        String[] opciones = {"Editar", "Eliminar", "Ver materiales usados"};
+
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
         dialogo.setTitle("Opciones")
-                .setMessage("¿Qué deseas hacer con esta obra?")
-                .setPositiveButton("Editar", (dialog, which) -> {
-                    Intent intent = new Intent(this, EditarObraActivity.class);
-                    intent.putExtra("id", obraSeleccionada.getId());
-                    startActivity(intent);
-                })
-                .setNegativeButton("Eliminar", (dialog, which) -> {
-                    boolean eliminado = controller.eliminarObra(obraSeleccionada.getId());
-                    if (eliminado) {
-                        Toast.makeText(this, "Obra eliminada", Toast.LENGTH_SHORT).show();
-                        cargarLista(); // recargar después de eliminar
-                    } else {
-                        Toast.makeText(this, "Error al eliminar", Toast.LENGTH_SHORT).show();
+                .setItems(opciones, (dialog, which) -> {
+                    switch (which) {
+                        case 0: // Editar
+                            Intent intentEditar = new Intent(this, EditarObraActivity.class);
+                            intentEditar.putExtra("id", obraSeleccionada.getId());
+                            startActivity(intentEditar);
+                            break;
+                        case 1: // Eliminar
+                            boolean eliminado = controller.eliminarObra(obraSeleccionada.getId());
+                            if (eliminado) {
+                                Toast.makeText(this, "Obra eliminada", Toast.LENGTH_SHORT).show();
+                                cargarLista();
+                            } else {
+                                Toast.makeText(this, "Error al eliminar", Toast.LENGTH_SHORT).show();
+                            }
+                            break;
+                        case 2: // Ver materiales usados
+                            Intent intentMateriales = new Intent(this, com.example.appconstruccion.views.materialUsado.ListaMaterialUsadoActivity.class);
+                            intentMateriales.putExtra("idObra", obraSeleccionada.getId());
+                            startActivity(intentMateriales);
+                            break;
                     }
                 })
-                .setNeutralButton("Cancelar", null)
+                .setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss())
                 .show();
     }
+
 
     @Override
     protected void onResume() {
         super.onResume();
-        cargarLista(); // recargar la lista al volver de editar
+        cargarLista();
     }
 }
