@@ -13,7 +13,7 @@ import java.util.List;
 public class DBConstruccion extends SQLiteOpenHelper {
 
     public static final String DB_NAME = "Construccion.db";
-    public static final int DB_VERSION = 12;
+    public static final int DB_VERSION = 13;
 
     public DBConstruccion(Context context) {
 
@@ -74,6 +74,16 @@ public class DBConstruccion extends SQLiteOpenHelper {
                 "FOREIGN KEY (obra_id) REFERENCES obra(id))"; // Referencia a la tabla "obra"
         db.execSQL(queryAvanceObra);
 
+        String queryCostoTotal = "CREATE TABLE CostoTotal (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "idObra INTEGER," +
+                "presupuestoTotal REAL," +
+                "gastoMateriales REAL," +
+                "gastoManoObra REAL," +
+                "gastoHerramientas REAL," +
+                "FOREIGN KEY(idObra) REFERENCES obra(id))";
+        db.execSQL(queryCostoTotal);
+
 
 
     }
@@ -86,6 +96,8 @@ public class DBConstruccion extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS materialUsado");
         db.execSQL("DROP TABLE IF EXISTS personal");
         db.execSQL("DROP TABLE IF EXISTS avance_obra");
+        db.execSQL("DROP TABLE IF EXISTS CostoTotal");
+
 
         onCreate(db);
     }
