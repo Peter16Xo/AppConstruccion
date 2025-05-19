@@ -1,4 +1,3 @@
-
 package com.example.appconstruccion.views.costosTotales;
 
 import android.content.Intent;
@@ -9,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.appconstruccion.R;
 import com.example.appconstruccion.controller.CostoTotalController;
 import com.example.appconstruccion.model.CostoTotal;
+import com.example.appconstruccion.model.Obra;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +49,12 @@ public class ListaCostosTotalesActivity extends AppCompatActivity {
 
         List<String> texto = new ArrayList<>();
         for (CostoTotal c : listaDatos) {
-            texto.add("Obra ID: " + c.getIdObra() +
+            Obra obra = controller.obtenerObraPorId(c.getIdObra());
+            String nombreObra = (obra != null) ?
+                    obra.getNombreProyecto() + " - " + obra.getCliente() :
+                    "Obra desconocida";
+
+            texto.add("Obra: " + nombreObra +
                     "\nPresupuesto: $" + c.getPresupuestoTotal() +
                     "\nGastado: $" + c.getTotalGastado() +
                     "\nRestante: $" + c.getDiferencia());
